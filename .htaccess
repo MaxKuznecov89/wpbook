@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www.)?wp$
+RewriteCond %{REQUEST_URI} !^/bla/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /bla/$1
+RewriteCond %{HTTP_HOST} ^(www.)?wp$
+RewriteRule ^(/)?$ /bla/index.php [L]
+</IfModule>
